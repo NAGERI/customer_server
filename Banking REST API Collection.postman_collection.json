@@ -1,0 +1,819 @@
+{
+	"info": {
+		"_postman_id": "5145fc35-3dbc-401a-9a2e-97aa43beaf40",
+		"name": "Banking REST API Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8123192"
+	},
+	"item": [
+		{
+			"name": "Customer-API",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/customers",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/customers",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:23:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Margret Potter\",\n        \"email\": \"maggie.pot@email.com\",\n        \"customer_id\": \"1892\",\n        \"customer_pin\": \"CPIN1700342122629\",\n        \"accounts\": [\n            {\n                \"customer\": 1,\n                \"id\": 1,\n                \"accountNumber\": \"ACC1700342122779\",\n                \"openingDate\": \"2023-11-19\",\n                \"balance\": 60,\n                \"transactions\": [\n                    {\n                        \"account\": 1,\n                        \"id\": 1,\n                        \"transaction_id\": \"1ee8657d-2d5c-6468-b799-3fe7da5b1040\",\n                        \"transactionType\": \"DEPOSIT\",\n                        \"transactionAmount\": 300,\n                        \"transactionDate\": \"2023-11-19\"\n                    },\n                    {\n                        \"account\": 1,\n                        \"id\": 2,\n                        \"transaction_id\": \"1ee8657f-3031-6269-b799-3fe7da5b1040\",\n                        \"transactionType\": \"WITHDRAWAL\",\n                        \"transactionAmount\": 120,\n                        \"transactionDate\": \"2023-11-19\"\n                    },\n                    {\n                        \"account\": 1,\n                        \"id\": 3,\n                        \"transaction_id\": \"1ee86585-4496-6a6a-b799-3fe7da5b1040\",\n                        \"transactionType\": \"WITHDRAWAL\",\n                        \"transactionAmount\": 120,\n                        \"transactionDate\": \"2023-11-19\"\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Garry Ski\",\n        \"email\": \"garry.ski@email.com\",\n        \"customer_id\": \"3829\",\n        \"customer_pin\": \"CPIN1700342147533\",\n        \"accounts\": [\n            {\n                \"customer\": 2,\n                \"id\": 2,\n                \"accountNumber\": \"ACC1700342147535\",\n                \"openingDate\": \"2023-11-19\",\n                \"balance\": 120,\n                \"transactions\": [\n                    {\n                        \"account\": 2,\n                        \"id\": 4,\n                        \"transaction_id\": \"1ee86585-4496-6a6b-b799-3fe7da5b1040\",\n                        \"transactionType\": \"DEPOSIT\",\n                        \"transactionAmount\": 120,\n                        \"transactionDate\": \"2023-11-19\"\n                    }\n                ]\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Register Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\":\"Jane Doe\",\r\n  \"email\":\"jane.doe@email.com\",\r\n  \"customer_id\":\"2390\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/customers",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\":\"Jane Doe\",\r\n  \"email\":\"jane.doe@email.com\",\r\n  \"customer_id\":\"2390\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/customers",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:24:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name\": \"Jane Doe\",\n    \"email\": \"jane.doe@email.com\",\n    \"customer_id\": \"2390\",\n    \"customer_pin\": \"CPIN1700342657837\",\n    \"accounts\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Accouts-API",
+			"item": [
+				{
+					"name": "Get All Accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Accounts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/accounts",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:20:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"customer\": {\n            \"id\": 1,\n            \"name\": \"Margret Potter\",\n            \"email\": \"maggie.pot@email.com\",\n            \"customer_id\": \"1892\",\n            \"customer_pin\": \"CPIN1700342122629\",\n            \"accounts\": [\n                1\n            ]\n        },\n        \"id\": 1,\n        \"accountNumber\": \"ACC1700342122779\",\n        \"openingDate\": \"2023-11-19\",\n        \"balance\": 60,\n        \"transactions\": [\n            {\n                \"account\": 1,\n                \"id\": 1,\n                \"transaction_id\": \"1ee8657d-2d5c-6468-b799-3fe7da5b1040\",\n                \"transactionType\": \"DEPOSIT\",\n                \"transactionAmount\": 300,\n                \"transactionDate\": \"2023-11-19\"\n            },\n            {\n                \"account\": 1,\n                \"id\": 2,\n                \"transaction_id\": \"1ee8657f-3031-6269-b799-3fe7da5b1040\",\n                \"transactionType\": \"WITHDRAWAL\",\n                \"transactionAmount\": 120,\n                \"transactionDate\": \"2023-11-19\"\n            },\n            {\n                \"account\": 1,\n                \"id\": 3,\n                \"transaction_id\": \"1ee86585-4496-6a6a-b799-3fe7da5b1040\",\n                \"transactionType\": \"WITHDRAWAL\",\n                \"transactionAmount\": 120,\n                \"transactionDate\": \"2023-11-19\"\n            }\n        ]\n    },\n    {\n        \"customer\": {\n            \"id\": 2,\n            \"name\": \"Garry Ski\",\n            \"email\": \"garry.ski@email.com\",\n            \"customer_id\": \"3829\",\n            \"customer_pin\": \"CPIN1700342147533\",\n            \"accounts\": [\n                2\n            ]\n        },\n        \"id\": 2,\n        \"accountNumber\": \"ACC1700342147535\",\n        \"openingDate\": \"2023-11-19\",\n        \"balance\": 120,\n        \"transactions\": [\n            {\n                \"account\": 2,\n                \"id\": 4,\n                \"transaction_id\": \"1ee86585-4496-6a6b-b799-3fe7da5b1040\",\n                \"transactionType\": \"DEPOSIT\",\n                \"transactionAmount\": 120,\n                \"transactionDate\": \"2023-11-19\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All Account By accountId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/accounts/balance/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts",
+								"balance",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Account By accountId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/accounts/balance/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts",
+										"balance",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:17:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "300"
+						}
+					]
+				},
+				{
+					"name": "Get Account Balance By accountId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts/1",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Account Balance By accountId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/accounts/1",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 20:26:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"customer\": {\n        \"id\": 1,\n        \"name\": \"Margret Potter\",\n        \"email\": \"maggie.pot@email.com\",\n        \"customer_id\": \"1892\",\n        \"customer_pin\": \"CPIN1700338986401\",\n        \"accounts\": [\n            1\n        ]\n    },\n    \"id\": 1,\n    \"accountNumber\": \"ACC1700338986636\",\n    \"openingDate\": \"2023-11-18\",\n    \"balance\": 0,\n    \"transactions\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "Deposit to account.",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts/1/deposit?amount=300",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts",
+								"1",
+								"deposit"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/accounts/1/deposit?amount=300",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts",
+										"1",
+										"deposit"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "300"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:17:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Deposit successful"
+						}
+					]
+				},
+				{
+					"name": "Withdraw From Account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts/1/withdraw?amount=120",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts",
+								"1",
+								"withdraw"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "120"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/accounts/1/withdraw?amount=120",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts",
+										"1",
+										"withdraw"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "120"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "21"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:17:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Withdrawal successful"
+						}
+					]
+				},
+				{
+					"name": "Transfer from A to B",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts/transfer?fromAccountId=1&toAccountId=2&amount=120",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "fromAccountId",
+									"value": "1"
+								},
+								{
+									"key": "toAccountId",
+									"value": "2"
+								},
+								{
+									"key": "amount",
+									"value": "120"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/accounts/transfer?fromAccountId=1&toAccountId=2&amount=120",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"accounts",
+										"transfer"
+									],
+									"query": [
+										{
+											"key": "fromAccountId",
+											"value": "1"
+										},
+										{
+											"key": "toAccountId",
+											"value": "2"
+										},
+										{
+											"key": "amount",
+											"value": "120"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "19"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:20:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Transfer successful"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transactions-API",
+			"item": [
+				{
+					"name": "Get Transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/transactions",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE_URL}}/transactions",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"transactions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Nov 2023 21:25:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"account\": {\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"Margret Potter\",\n                \"email\": \"maggie.pot@email.com\",\n                \"customer_id\": \"1892\",\n                \"customer_pin\": \"CPIN1700342122629\",\n                \"accounts\": [\n                    1\n                ]\n            },\n            \"id\": 1,\n            \"accountNumber\": \"ACC1700342122779\",\n            \"openingDate\": \"2023-11-19\",\n            \"balance\": 60,\n            \"transactions\": [\n                1,\n                {\n                    \"account\": 1,\n                    \"id\": 2,\n                    \"transaction_id\": \"1ee8657f-3031-6269-b799-3fe7da5b1040\",\n                    \"transactionType\": \"WITHDRAWAL\",\n                    \"transactionAmount\": 120,\n                    \"transactionDate\": \"2023-11-19\"\n                },\n                {\n                    \"account\": 1,\n                    \"id\": 3,\n                    \"transaction_id\": \"1ee86585-4496-6a6a-b799-3fe7da5b1040\",\n                    \"transactionType\": \"WITHDRAWAL\",\n                    \"transactionAmount\": 120,\n                    \"transactionDate\": \"2023-11-19\"\n                }\n            ]\n        },\n        \"id\": 1,\n        \"transaction_id\": \"1ee8657d-2d5c-6468-b799-3fe7da5b1040\",\n        \"transactionType\": \"DEPOSIT\",\n        \"transactionAmount\": 300,\n        \"transactionDate\": \"2023-11-19\"\n    },\n    1,\n    1,\n    {\n        \"account\": {\n            \"customer\": {\n                \"id\": 2,\n                \"name\": \"Garry Ski\",\n                \"email\": \"garry.ski@email.com\",\n                \"customer_id\": \"3829\",\n                \"customer_pin\": \"CPIN1700342147533\",\n                \"accounts\": [\n                    2\n                ]\n            },\n            \"id\": 2,\n            \"accountNumber\": \"ACC1700342147535\",\n            \"openingDate\": \"2023-11-19\",\n            \"balance\": 120,\n            \"transactions\": [\n                2\n            ]\n        },\n        \"id\": 4,\n        \"transaction_id\": \"1ee86585-4496-6a6b-b799-3fe7da5b1040\",\n        \"transactionType\": \"DEPOSIT\",\n        \"transactionAmount\": 120,\n        \"transactionDate\": \"2023-11-19\"\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080/api",
+			"type": "string"
+		}
+	]
+}

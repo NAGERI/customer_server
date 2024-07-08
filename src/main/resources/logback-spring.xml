@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<configuration>-->
+<!--    <include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
+<!--    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>-->
+<!--    <include resource="org/springframework/boot/logging/logback/file-appender.xml" />-->
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="FILE" />-->
+<!--    </root>-->
+<!--</configuration>-->
+
+<configuration>
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+        <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n</pattern>
+    </encoder>
+</appender>
+<appender name="SAVE-TO-FILE" class="ch.qos.logback.core.FileAppender">
+    <file>C:\var\log\applications\API\logs\request.log</file>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
+    </encoder>
+</appender>
+<appender name="OUTBOUND_LOGS" class="ch.qos.logback.core.FileAppender">
+    <file>C:\var\log\applications\API\logs\response.log</file>
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+        <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n</Pattern>
+    </encoder>
+</appender>
+<logger name="request-logs" additivity="false" level="info">
+    <appender-ref ref="SAVE-TO-FILE" />
+    <appender-ref ref="STDOUT" />
+</logger>
+<logger name="response-logs" additivity="false" level="info">
+    <appender-ref ref="OUTBOUND_LOGS" />
+    <appender-ref ref="STDOUT" />
+</logger>
+<root level="INFO">
+    <appender-ref ref="STDOUT" />
+</root>
+</configuration>
